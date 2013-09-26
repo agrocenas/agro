@@ -1,2 +1,0 @@
-echo 'CREATE DATABASE agro' | mysql -u root -p master
-cat ../agro/schemas/agro.sql | mysql -u root 
