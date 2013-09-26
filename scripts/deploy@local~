@@ -1,0 +1,4 @@
+sudo cp -r ../agro /var/www/
+sudo chmod -R 777 /var/www/agro/
+
+
