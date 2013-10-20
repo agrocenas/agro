@@ -38,7 +38,7 @@ class ProductsController extends ControllerBase
 
         $products = Products::find($parameters);
         if (count($products) == 0) {
-            $this->flash->notice("The search did not find any products");
+            $this->flash->warning("A pesquisa nao devolveu resultados");
             return $this->forward("products/index");
         }
 
@@ -66,7 +66,7 @@ class ProductsController extends ControllerBase
 
             $products = Products::findFirst('id="' . $id . '"');
             if (!$products) {
-                $this->flash->error("products was not found");
+                $this->flash->error("nao foram encontrados");
                 return $this->forward("products/index");
             }
 
@@ -106,7 +106,7 @@ class ProductsController extends ControllerBase
             return $this->forward("products/new");
 
         } else {
-            $this->flash->success("products was created successfully");
+            $this->flash->success("Produto registado com sucesso !");
             return $this->forward("products/index");
         }
     }
@@ -121,7 +121,7 @@ class ProductsController extends ControllerBase
         $id = $request->getPost("id", "int");
         $products = Products::findFirst("id='$id'");
         if ($products == false) {
-            $this->flash->error("products does not exist ".$id);
+            $this->flash->error("Produto nao existe ".$id);
             return $this->forward("products/index");
         }
 
@@ -140,7 +140,7 @@ class ProductsController extends ControllerBase
 
             return $this->forward("products/edit/" . $products->id);
         } else {
-            $this->flash->success("Product was successfully updated");
+            $this->flash->success("Produto alterado com sucesso !");
             return $this->forward("products/index");
         }
     }
@@ -151,7 +151,7 @@ class ProductsController extends ControllerBase
 
         $products = Products::findFirst('id="' . $id . '"');
         if (!$products) {
-            $this->flash->error("Product was not found");
+            $this->flash->error("Produto nao encontrado");
             return $this->forward("products/index");
         }
 
@@ -161,7 +161,7 @@ class ProductsController extends ControllerBase
             }
             return $this->forward("products/search");
         } else {
-            $this->flash->success("Products was deleted");
+            $this->flash->errors("Produto eliminado !");
             return $this->forward("products/index");
         }
     }

@@ -3,14 +3,14 @@
 <?php echo $this->getContent() ?>
 
 <div align="right">
-    <?php echo Tag::linkTo(array("producttypes/new", "Create Product types", "class" => "btn btn-primary")) ?>
+    <?php echo Tag::linkTo(array("producttypes/new", "Criar categoria", "class" => "btn btn-primary")) ?>
 </div>
 
 <?php echo Tag::form(array("producttypes/search", "autocomplete" => "off")) ?>
 
-<div class="center scaffold">
+<div class="left scaffold">
 
-    <h2>Search product types</h2>
+    <h2>Pesquisar categorias</h2>
 
     <div class="clearfix">
         <label for="id">Id</label>
@@ -18,12 +18,12 @@
     </div>
 
     <div class="clearfix">
-        <label for="name">Name</label>
+        <label for="name">Nome</label>
         <?php echo Tag::textField(array("name", "size" => 24, "maxlength" => 70)) ?>
     </div>
 
     <div class="clearfix">
-        <?php echo Tag::submitButton(array("Search", "class" => "btn btn-primary")) ?></td>
+        <?php echo Tag::submitButton(array("Pesquisar", "class" => "btn btn-primary")) ?></td>
     </div>
 
 </div>

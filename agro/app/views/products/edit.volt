@@ -13,8 +13,8 @@
 
 <?php echo $this->getContent() ?>
 
-<div class="center scaffold">
-    <h2>Edit products</h2>
+<div class="left scaffold">
+    <h2>Editar produtos</h2>
 
 
     <input type="hidden" name="id" id="id" value="<?php echo $id ?>" />
@@ -30,12 +30,12 @@
     </div>
 
     <div class="clearfix">
-        <label for="price">Preço</label>
+        <label for="price">Preco</label>
         <?php echo Tag::textField(array("price", "size" => 24, "maxlength" => 70, "type" => "number")) ?>
     </div>
 
     <div class="clearfix">
-        <label for="active">Disponível</label>
+        <label for="active">Disponivel</label>
         <?php echo Tag::selectStatic(array("active", array('Y'=>'Y','N'=>'N',), "useDummy" => true)) ?>
     </div>
 

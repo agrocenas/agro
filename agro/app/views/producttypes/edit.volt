@@ -7,13 +7,13 @@
         <?php echo Tag::linkTo(array("producttypes", "&larr; Voltar")) ?>
     </li>
     <li class="pull-right">
-        <?php echo Tag::submitButton(array("Save", "class" => "btn btn-success")) ?>
+        <?php echo Tag::submitButton(array("Guardar", "class" => "btn btn-success")) ?>
     </li>
 </ul>
 
 <?php echo $this->getContent() ?>
 
-<div class="center scaffold">
+<div class="left scaffold">
     <h2>Edit product types</h2>
     
     <input type="hidden" name="id" id="id" value="<?php echo $id ?>" />

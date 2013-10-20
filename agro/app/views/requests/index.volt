@@ -1,3 +1,7 @@
+
+
+{{ content() }}
+
 <p>
     <h2>Os teus pedidos </h2>
 </p>

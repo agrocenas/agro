@@ -1,9 +1,10 @@
+<?php use Phalcon\Tag as Tag ?>
 
-<form method="post" action="{{ url("suppliers/save") }}">
+<form method="post" action="{{ url("posts/save") }}">
 
 <ul class="pager">
     <li class="previous pull-left">
-        {{ link_to("suppliers", "&larr; Voltar") }}
+        {{ link_to("posts", "&larr; Voltar") }}
     </li>
     <li class="pull-right">
         {{ submit_button("Guardar", "class": "btn btn-success") }}
@@ -12,30 +13,47 @@
 
 {{ content() }}
 
-<div class="center scaffold">
-    <h2>Editar produtor</h2>
+<div class="left scaffold">
+    <h2>Editar post</h2>
 
-    {{ form.render("id") }}
+<div class="clearfix">
+        <label for="id">Id</label>
+        {{ form.render("id") }}
+    </div>
+    
 
-    <div class="clearfix">
-        <label for="name">Nome</label>
-        {{ form.render("name") }}
+
+<div class="clearfix">
+    <div>
+        <label for="post_user">Por</label>
+    </div>
+    <div>
+{{ form.render("post_user") }}
+    </div>
+</div>
+    
+
+
+<div class="clearfix">
+        <label for="description">Em</label>
+        {{ form.render("post_date") }}
+    </div>
+    
+
+<div class="clearfix">
+        <label for="product">Produto</label>
+        {{form.render("product") }}
+    </div>
+    
+<div class="clearfix">
+        <label for="description">Descricao</label>
+        {{ form.render("description") }}
     </div>
 
-    <div class="clearfix">
-        <label for="telephone">Telefone</label>
-        {{ form.render("telephone") }}
+<div class="clearfix">
+        <label for="active">Active</label>
+        {{form.render("active") }}
     </div>
-
-    <div class="clearfix">
-        <label for="address">Morada</label>
-        {{ form.render("address") }}
-    </div>
-
-    <div class="clearfix">
-        <label for="city">Cidade</label>
-        {{ form.render("city") }}
-    </div>
-
+    
     </form>
 </div>

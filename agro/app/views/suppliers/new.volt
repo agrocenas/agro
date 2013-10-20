@@ -12,7 +12,7 @@
 
 {{ content() }}
 
-<div class="center scaffold">
+<div class="left scaffold">
     <h2>Registar produtor</h2>
 
     <div class="clearfix">

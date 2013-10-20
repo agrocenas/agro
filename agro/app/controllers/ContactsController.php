@@ -1,11 +1,11 @@
 <?php
 
-class ContactController extends ControllerBase
+class ContactsController extends ControllerBase
 {
     public function initialize()
     {
         $this->view->setTemplateAfter('main');
-        Phalcon\Tag::setTitle('Contact us');
+        Phalcon\Tag::setTitle('Contactos');
         parent::initialize();
     }
 
@@ -21,7 +21,7 @@ class ContactController extends ControllerBase
             $email = $this->request->getPost('email', 'email');
             $comments = $this->request->getPost('comments', array('striptags', 'string'));
 
-            $contact = new Contact();
+            $contact = new Contacts();
             $contact->name = $name;
             $contact->email = $email;
             $contact->comments = $comments;
@@ -31,10 +31,10 @@ class ContactController extends ControllerBase
                     $this->flash->error((string) $message);
                 }
             } else {
-                $this->flash->success('Thanks, We will contact you in the next few hours');
+                $this->flash->success('Obrigado, responderemos assim que possivel');
                 return $this->forward('index/index');
             }
         }
-        return $this->forward('contact/index');
+        return $this->forward('contacts/index');
     }
 }

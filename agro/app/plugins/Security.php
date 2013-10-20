@@ -37,10 +37,12 @@ class Security extends Plugin
 
 			//Private area resources
 			$privateResources = array(
-				'suppliers' => array('index', 'search', 'new', 'edit', 'save', 'create', 'delete'),
+                                'suppliers' => array('index', 'search', 'new', 'edit', 'save', 'create', 'delete'),
 				'products' => array('index', 'search', 'new', 'edit', 'save', 'create', 'delete'),
 				'producttypes' => array('index', 'search', 'new', 'edit', 'save', 'create', 'delete'),
-				'requests' => array('index', 'profile')
+				'requests' => array('index', 'profile'),
+                                'posts' => array('index', 'search', 'new', 'edit', 'save', 'create'),
+                                'maplocations' => array('index', 'search', 'edit'),
 			);
 			foreach ($privateResources as $resource => $actions) {
 				$acl->addResource(new Phalcon\Acl\Resource($resource), $actions);
@@ -51,7 +53,8 @@ class Security extends Plugin
 				'index' => array('index'),
 				'about' => array('index'),
 				'session' => array('index', 'register', 'start', 'end'),
-				'contact' => array('index', 'send')
+                                'maplocations' => array('index'),
+				'contacts' => array('index', 'send')
 			);
 			foreach ($publicResources as $resource => $actions) {
 				$acl->addResource(new Phalcon\Acl\Resource($resource), $actions);
@@ -99,7 +102,8 @@ class Security extends Plugin
 		$allowed = $acl->isAllowed($role, $controller, $action);
 		if ($allowed != Acl::ALLOW) {
 			$this->flash->error("Accesso negado!");
-			$dispatcher->forward(
+			//Redirect to Home page
+                          $dispatcher->forward(
 				array(
 					'controller' => 'index',
 					'action' => 'index'

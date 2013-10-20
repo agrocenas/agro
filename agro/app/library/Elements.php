@@ -14,49 +14,63 @@ class Elements extends Phalcon\Mvc\User\Component
                 'caption' => 'Home',
                 'action' => 'index'
             ),
+            'posts' => array(
+                'caption' => 'Ofertas',
+                'action' => 'search'
+            ),
             'requests' => array(
-                'caption' => 'Requests',
+                'caption' => 'Pedidos',
                 'action' => 'index'
             ),
             'about' => array(
-                'caption' => 'About',
+                'caption' => 'Acerca',
                 'action' => 'index'
             ),
-            'contact' => array(
-                'caption' => 'Contact',
+            'contacts' => array(
+                'caption' => 'Contatos',
                 'action' => 'index'
             ),
         ),
         'pull-right' => array(
             'session' => array(
-                'caption' => 'Log In/Sign Up',
+                'caption' => 'Entrar',
                 'action' => 'index'
             ),
         )
     );
 
     private $_tabs = array(
-        'Requests' => array(
+        'Ofertas' => array(
+          'controller'  => 'posts',
+          'action' => 'search',
+          'any' => true
+        ),
+        'Mapa' => array(
+          'controller'  => 'maplocations',
+          'action' => 'index',
+          'any' => false
+        ),
+        'Pedidos' => array(
             'controller' => 'requests',
             'action' => 'index',
             'any' => false
         ),
-        'Suppliers' => array(
+        'Produtores' => array(
             'controller' => 'suppliers',
-            'action' => 'index',
+            'action' => 'search',
             'any' => true
         ),
-        'Products' => array(
+        'Produtos' => array(
             'controller' => 'products',
-            'action' => 'index',
+            'action' => 'search',
             'any' => true
         ),
-        'Product Types' => array(
+        'Categorias' => array(
             'controller' => 'producttypes',
-            'action' => 'index',
+            'action' => 'search',
             'any' => true
         ),
-        'Your Profile' => array(
+        'Perfil' => array(
             'controller' => 'requests',
             'action' => 'profile',
             'any' => false
@@ -74,11 +88,12 @@ class Elements extends Phalcon\Mvc\User\Component
         $auth = $this->session->get('auth');
         if ($auth) {
             $this->_headerMenu['pull-right']['session'] = array(
-                'caption' => 'Log Out',
+                'caption' => 'Sair',
                 'action' => 'end'
             );
         } else {
             unset($this->_headerMenu['pull-left']['requests']);
+            unset($this->_headerMenu['pull-left']['posts']);
         }
 
         echo '<div class="nav-collapse">';

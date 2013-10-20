@@ -13,7 +13,7 @@
 
 <?php echo $this->getContent() ?>
 
-<div class="center scaffold">
+<div class="left scaffold">
     <h2>Registar produtos</h2>
 
     <div class="clearfix">

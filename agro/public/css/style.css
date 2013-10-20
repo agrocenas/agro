@@ -137,3 +137,49 @@ select {
 div.scaffold h2 {
 	margin: 10px;
 }
+
+/* Posts area */
+
+div.post {
+    overflow: auto;
+}
+
+
+div.post-user {
+    width: 100%;
+    background-color: #EEEEEE;
+    display: block;
+}
+
+div.post-product {
+    float: right;
+    width: 85%;
+    background-color: #F5F5F5;
+    display: -webkit-box;
+}
+
+div.post-comment {
+    float: right;
+    width: 70%;
+    background-color: #F8F8F8;
+    display: -webkit-box;
+}
+
+/* Map area */
+#map {
+    width: 100%;
+    height: 600px;
+    overflow: auto;
+}
+
+
+/*  NOTES
+http://www.w3schools.com/css/css_id_class.asp
+
+.xpto{xxx:yyy} - Style to use as class eg : <td class="xpto">
+
+#xpto{xxx:yyy}} - Style only applies to the item with id= xpto. eg: <td id="xpto">
+
+p.center {text-align:center;} In the example, all p elements with class="center" will be center-aligned:
+
+*/

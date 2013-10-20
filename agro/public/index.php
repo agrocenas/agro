@@ -24,7 +24,7 @@ try {
 	)->register();
 
 	/**
-	 * The FactoryDefault Dependency Injector automatically register the right services providing a full stack framework
+	 * The Factory Default Dependency Injector automatically register the right services providing a full stack framework
 	 */
 	$di = new \Phalcon\DI\FactoryDefault();
 
@@ -93,7 +93,7 @@ try {
 			"host" => $config->database->host,
 			"username" => $config->database->username,
 			"password" => $config->database->password,
-			"dbname" => $config->database->name
+			"dbname" => $config->database->dbname
 		));
 	});
 
@@ -126,6 +126,8 @@ try {
 			'error' => 'alert alert-error',
 			'success' => 'alert alert-success',
 			'notice' => 'alert alert-info',
+                        'warning' => 'alert alert-warning',
+                        
 		));
 	});
 

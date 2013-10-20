@@ -8,7 +8,7 @@
 
 <?php echo Tag::form(array("products/search", "autocomplete" => "off")) ?>
 
-<div class="center scaffold">
+<div class="left scaffold" >
 
     <h2>Search products</h2>
 
@@ -18,7 +18,7 @@
     </div>
 
     <div class="clearfix">
-        <label for="product_types_id">Product Type</label>
+        <label for="product_types_id">Categoria</label>
         <?php echo Tag::select(array("product_types_id", $productTypes, "using" => array("id", "name"), "useDummy" => true)) ?>
     </div>
 
@@ -28,7 +28,7 @@
     </div>
 
     <div class="clearfix">
-        <label for="price">Preço</label>
+        <label for="price">Preco</label>
         <?php echo Tag::textField(array("price", "size" => 24, "maxlength" => 70, "type" => "number")) ?>
     </div>
 

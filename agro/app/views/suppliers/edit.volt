@@ -12,7 +12,7 @@
 
 {{ content() }}
 
-<div class="center scaffold">
+<div class="left scaffold">
     <h2>Editar produtor</h2>
 
     {{ form.render("id") }}

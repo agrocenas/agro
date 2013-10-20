@@ -22,7 +22,8 @@
                             {{ password_field('password', 'size': "30", 'class': "input-xlarge") }}
                         </div>
                     </div>
-                    <div class="form-actions">
+                    <br/>
+                    <div>
                         {{ submit_button('Login', 'class': 'btn btn-primary btn-large') }}
                     </div>
                 </fieldset>
@@ -36,12 +37,12 @@
 
             <p>Cria uma contar para poderes:</p>
             <ul>
-                <li>Comprar alimentos melhores e a melhores preços</li>
-                <li>Vender os limões, os coentros, ou as malaguetas que não precisas</li>
+                <li>Comprar alimentos melhores e a melhores precos</li>
+                <li>Vender os limoes, os coentros, ou as malaguetas que nao precisas</li>
                 <li>Ver os outros a aproveitar...</li>
             </ul>
 
-            <div class="clearfix center">
+            <div class="clearfix left">
                 {{ link_to('session/register', 'Sign Up', 'class': 'btn btn-primary btn-large btn-success') }}
             </div>
         </div>

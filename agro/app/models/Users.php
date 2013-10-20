@@ -12,11 +12,11 @@ class Users extends Phalcon\Mvc\Model
         )));
         $this->validate(new UniquenessValidator(array(
             'field' => 'email',
-            'message' => 'Sorry, The email was registered by another user'
+            'message' => 'E-mail já registado'
         )));
         $this->validate(new UniquenessValidator(array(
             'field' => 'username',
-            'message' => 'Sorry, That username is already taken'
+            'message' => 'Username já registado'
         )));
         if ($this->validationHasFailed() == true) {
             return false;

@@ -32,6 +32,14 @@ class Products extends Phalcon\Mvc\Model
         $this->belongsTo('product_types_id', 'ProductTypes', 'id', array(
 		'reusable' => true
 	));
+        
+        $this->hasMany('id', 'Posts', 'post_user', array(
+        	'foreignKey' => array(
+        		'message' => 'Produto cannot be deleted'
+        	)
+        ));
     }
+    
+    
 
 }

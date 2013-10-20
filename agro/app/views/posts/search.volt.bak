@@ -1,0 +1,77 @@
+<?php use Phalcon\Tag as Tag ?>
+
+{{ content() }}
+
+<ul class="pager">
+    <li class="previous pull-left">
+        {{ link_to("posts/index", "&larr; Voltar") }}
+    </li>
+    <li class="pull-right">
+        {{ link_to("posts/new", "Postar", "class": "btn btn-success") }}
+    </li>
+</ul>
+
+{% for post in page.items %}
+        <table class="posts" style="width: 80%;border-bottom-style: groove">
+            <tr>
+                <td>
+            <table>
+            <tr>
+                <!--  TODO : Load pictures from db -->
+                <td style="width: 10%"  >                    
+                     {{ image("/../public/img/default-user.png") }}
+                </td>
+                <td style="width: 20%">       
+                    {{ post.getUsers().name }}<br>
+                    #{{ post.id }}
+                </td>
+                <td style="width: 60%">   
+                    {{ post.description }}
+                </td>
+                <td style="width: 10%">
+                        {% if (post.active == 'Y' ) %}
+                         <span class="label label-success" style="text-align: right">disponivel</span>
+                        {% else %}
+                         <span class="label label-important" style="text-align: right">indisponivel</span>
+                        {% endif %}
+                </td>
+            </tr>
+            </table>
+            <table>
+            <tr>
+                <td style="width: 10%">
+                    <span/>
+                </td>
+                <!--  TODO : Load pictures from db -->
+                <td style="width: 10%" >                    
+                     {{ image("/../public/img/carrot.jpg") }}
+                </td>
+                <td style="width: 20%">
+                    {{ post.getProducts().name }}<br>
+                    {{ post.getProducts().price }}
+                </td>
+                <td style="width: 50%">
+                    <span/>
+                </td>
+                <td style="width: 10%">
+                    {{ post.post_date }}
+                </td>   
+                    </td>
+            </tr>
+            </table>
+        </tr>
+        </table>
+            <!-- <td width="10%">{{ link_to("posts/edit/" ~ post.id, '<i class="icon-pencil"></i>', "class": "btn") }}</td> -->
+            <!--<td width="10%">{{ link_to("posts/delete/" ~ post.id, '<i class="icon-remove"></i>', "class": "btn") }}</td> -->
+{% if loop.last %}
+{{ link_to("posts/search?page=" ~ page.next) }}
+{{ link_to("posts/search?page=" ~ page.next, '<i class="icon-step-forward"></i>', "class": "btn") }}
+
+{% endif %}
+{% else %}
+    Sem novidades...
+{% endfor %}
+
+
+
+

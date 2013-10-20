@@ -1143,14 +1143,14 @@ input[type="checkbox"][readonly] {
 .control-group.success > label,
 .control-group.success .help-block,
 .control-group.success .help-inline {
-  color: #468847;
+  color: #58a959;
 }
 
 .control-group.success input,
 .control-group.success select,
 .control-group.success textarea {
-  color: #468847;
-  border-color: #468847;
+  color: #58a959;
+  border-color: #58a959;
 }
 
 .control-group.success input:focus,
@@ -1164,9 +1164,9 @@ input[type="checkbox"][readonly] {
 
 .control-group.success .input-prepend .add-on,
 .control-group.success .input-append .add-on {
-  color: #468847;
+  color: #58a959;
   background-color: #dff0d8;
-  border-color: #468847;
+  border-color: #58a959;
 }
 
 input:focus:required:invalid,
@@ -2618,12 +2618,7 @@ button.close {
   *background-color: #d9d9d9;
   /* Buttons in IE7 don't get borders, so darken on hover */
 
-  background-position: 0 -15px;
-  -webkit-transition: background-position 0.1s linear;
-     -moz-transition: background-position 0.1s linear;
-      -ms-transition: background-position 0.1s linear;
-       -o-transition: background-position 0.1s linear;
-          transition: background-position 0.1s linear;
+  
 }
 
 .btn:focus {
@@ -2715,7 +2710,8 @@ button.close {
 }
 
 .btn-primary {
-  background-color: #0074cc;
+  /*background-color: #0074cc;*/
+  background-color: #1b9807;
   *background-color: #0055cc;
   background-image: -ms-linear-gradient(top, #0088cc, #0055cc);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0055cc));
@@ -3149,7 +3145,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 .alert-success {
-  color: #468847;
+  color: #58a959;
   background-color: #dff0d8;
   border-color: #d6e9c6;
 }
@@ -3159,6 +3155,12 @@ input[type="submit"].btn.btn-mini {
   color: #b94a48;
   background-color: #f2dede;
   border-color: #eed3d7;
+}
+
+.alert-warning{
+  color: #f29c00;
+  background-color: #ffeccb;
+  border-color: #ffd17c;
 }
 
 .alert-info {
@@ -4081,10 +4083,7 @@ input[type="submit"].btn.btn-mini {
   display: inline-block;
   padding: 5px 14px;
   background-color: #fff;
-  border: 1px solid #ddd;
-  -webkit-border-radius: 15px;
-     -moz-border-radius: 15px;
-          border-radius: 15px;
+
 }
 
 .pager a:hover {
@@ -4538,7 +4537,7 @@ a.badge:hover {
 
 .label-success,
 .badge-success {
-  background-color: #468847;
+  background-color: #58a959;
 }
 
 .label-success[href],

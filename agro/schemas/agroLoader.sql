@@ -155,3 +155,4 @@ INSERT INTO `maplocations` (`id`,`name`,`address`,`lat`,`lng`,`type`) VALUES (10
 INSERT INTO `maplocations` (`id`,`name`,`address`,`lat`,`lng`,`type`) VALUES (11,'Carlos Alberto','Rua Pedro Alvares Cabral, Loures, Portugal',38.840717,-9.203204,'supplier');
 INSERT INTO `maplocations` (`id`,`name`,`address`,`lat`,`lng`,`type`) VALUES (12,'Felismina maria','Rua Virginia Vitorino, Lisboa',38.840729,-9.160280,'user');UNLOCK  TABLES;
 UNLOCK TABLES;
+

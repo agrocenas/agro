@@ -7,17 +7,17 @@
         <?php echo Tag::linkTo(array("producttypes", "&larr; Voltar")) ?>
     </li>
     <li class="pull-right">
-        <?php echo Tag::submitButton(array("Save", "class" => "btn btn-success")) ?>
+        <?php echo Tag::submitButton(array("Guardar", "class" => "btn btn-success")) ?>
     </li>
 </ul>
 
 <?php echo $this->getContent() ?>
 
-<div class="center scaffold">
+<div class="left scaffold">
     <h2>Create product types</h2>
 
     <div class="clearfix">
-        <label for="name">Name</label>
+        <label for="name">Categoria</label>
         <?php echo Tag::textField(array("name", "size" => 24, "maxlength" => 70)) ?>
     </div>
 

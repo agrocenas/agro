@@ -77,7 +77,7 @@ class SuppliersController extends ControllerBase
 
 		$suppliers = Suppliers::find($parameters);
 		if (count($suppliers) == 0) {
-			$this->flash->notice("A pesquisa não encontrou resultados");
+			$this->flash->warning("A pesquisa nao encontrou resultados");
 			return $this->forward("suppliers/index");
 		}
 
@@ -104,7 +104,7 @@ class SuppliersController extends ControllerBase
 
 			$supplier = Suppliers::findFirstById($id);
 			if (!$supplier) {
-				$this->flash->error("Produtor não encontrado !");
+				$this->flash->error("Produtor nao encontrado !");
 				return $this->forward("suppliers/index");
 			}
 
@@ -145,7 +145,7 @@ class SuppliersController extends ControllerBase
 
 		$suppliers = Suppliers::findFirstById($id);
 		if ($suppliers == false) {
-			$this->flash->error("Produtor não encontrado ! ".$id);
+			$this->flash->error("Produtor nao encontrado ! ".$id);
 			return $this->forward("suppliers/index");
 		}
 
@@ -171,7 +171,7 @@ class SuppliersController extends ControllerBase
 
 		$suppliers = Suppliers::findFirstById($id);
 		if (!$suppliers) {
-			$this->flash->error("Produtor não encontrado !");
+			$this->flash->error("Produtor nao encontrado !");
 			return $this->forward("suppliers/index");
 		}
 
@@ -182,7 +182,7 @@ class SuppliersController extends ControllerBase
 			return $this->forward("suppliers/search");
 		}
 
-		$this->flash->success("Produtor eliminado !");
+		$this->flash->error("Produtor eliminado !");
 		return $this->forward("suppliers/index");
 	}
 }

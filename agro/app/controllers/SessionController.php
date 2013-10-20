@@ -7,7 +7,7 @@ class SessionController extends ControllerBase
     public function initialize()
     {
         $this->view->setTemplateAfter('main');
-        Tag::setTitle('Sign Up/Sign In');
+        Tag::setTitle('Entrar');
         parent::initialize();
     }
 
@@ -84,7 +84,7 @@ class SessionController extends ControllerBase
             $user = Users::findFirst("email='$email' AND password='$password' AND active='Y'");
             if ($user != false) {
                 $this->_registerSession($user);
-                $this->flash->success('Bem Vindo ' . $user->name);
+                $this->flash->notice('Bem Vindo ' . $user->name);
                 return $this->forward('requests/index');
             }
 
@@ -92,11 +92,11 @@ class SessionController extends ControllerBase
             $user = Users::findFirst("username='$email' AND password='$password' AND active='Y'");
             if ($user != false) {
                 $this->_registerSession($user);
-                $this->flash->success('Bem Vindo ' . $user->name);
+                $this->flash->notice('Bem Vindo ' . $user->name);
                 return $this->forward('requests/index');
             }
 
-            $this->flash->error('Wrong email/password');
+            $this->flash->error('email/password errados');
         }
 
         return $this->forward('session/index');

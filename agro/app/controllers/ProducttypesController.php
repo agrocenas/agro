@@ -37,7 +37,7 @@ class ProductTypesController extends ControllerBase
 
         $productTypes = ProductTypes::find($parameters);
         if (count($productTypes) == 0) {
-            $this->flash->notice("The search did not find any product types");
+            $this->flash->warning("A pesquisa não devolveu resultados");
             return $this->forward("producttypes/index");
         }
 

@@ -1,6 +1,6 @@
 
 {{ elements.getTabs() }}
 
-<div align="center">
+<div align="left">
     {{ content() }}
 </div>

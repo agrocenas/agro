@@ -7,7 +7,7 @@
 
 <form method="post" action="{{ url("suppliers/search") }}">
 
-<div class="center scaffold">
+<div class="left scaffold">
 
     <h2>Procurar produtores</h2>
 
@@ -27,7 +27,7 @@
     </div>
 
     <div class="clearfix">
-        <label for="address">Endereço</label>
+        <label for="address">Endereco</label>
         {{ form.render("address") }}
     </div>
 
