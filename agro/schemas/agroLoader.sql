@@ -118,18 +118,33 @@ UNLOCK TABLES;
 -- comments
 --
 LOCK TABLES `comments` WRITE;
-INSERT INTO `comments` VALUES (1, 1, 1, '2013-04-10 20:53:04', 5 , 'nice vegies', 'tasted it yesterday and they are great!', 'Y');
-INSERT INTO `comments` VALUES (2, 1, 2, '2013-04-11 20:53:04', 5 , 'good', 'tasted it yesterday and they are great!', 'Y');
-INSERT INTO `comments` VALUES (3, 2, 1, '2013-04-12 20:53:04', 5 , 'suck', 'tasted it yesterday and they are shit!', 'Y');
-INSERT INTO `comments` VALUES (4, 2, 2, '2013-04-13 20:53:04', 5 , 'fraud!', '=)#$#%$%"$##!', 'Y');
-INSERT INTO `comments` VALUES (5, 2, 2, '2013-04-14 20:53:04', 5 , 'cheater', 'payed and not receive a thing!', 'Y');
-INSERT INTO `comments` VALUES (6, 3, 2, '2013-04-15 20:53:04', 5 , 'nice vegies1', 'tasted it yesterday and they are great!', 'Y');
-INSERT INTO `comments` VALUES (7, 3, 2, '2013-04-16 20:53:04', 5 , 'nice vegies2', 'tasted it yesterday!', 'Y');
-INSERT INTO `comments` VALUES (8, 3, 2, '2013-04-17 20:53:04', 5 , 'nice vegies3', 'tasted it yesterday', 'Y');
-INSERT INTO `comments` VALUES (9, 3, 2, '2013-04-18 20:53:04', 5 , 'nice vegies4', 'tasted it !', 'Y');
-INSERT INTO `comments` VALUES (10, 4, 2, '2013-04-19 20:53:04', 5 , 'nice ', 'some dirt', 'Y');
-INSERT INTO `comments` VALUES (11, 5, 2, '2013-04-20 20:53:04', 5 , 'cool', 'had one rotten!', 'Y');
+INSERT INTO `comments` VALUES (1,  1, '2013-04-10 20:53:04', 5 , 'nice vegies', 'tasted it yesterday and they are great!', 'Y');
+INSERT INTO `comments` VALUES (2, 2, '2013-04-11 20:53:04', 5 , 'good', 'tasted it yesterday and they are great!', 'Y');
+INSERT INTO `comments` VALUES (3, 1, '2013-04-12 20:53:04', 5 , 'suck', 'tasted it yesterday and they are shit!', 'Y');
+INSERT INTO `comments` VALUES (4, 2, '2013-04-13 20:53:04', 5 , 'fraud!', '=)#$#%$%"$##!', 'Y');
+INSERT INTO `comments` VALUES (5, 2, '2013-04-14 20:53:04', 5 , 'cheater', 'payed and not receive a thing!', 'Y');
+INSERT INTO `comments` VALUES (6, 2, '2013-04-15 20:53:04', 5 , 'nice vegies1', 'tasted it yesterday and they are great!', 'Y');
+INSERT INTO `comments` VALUES (7, 2, '2013-04-16 20:53:04', 5 , 'nice vegies2', 'tasted it yesterday!', 'Y');
+INSERT INTO `comments` VALUES (8, 2, '2013-04-17 20:53:04', 5 , 'nice vegies3', 'tasted it yesterday', 'Y');
+INSERT INTO `comments` VALUES (9, 2, '2013-04-18 20:53:04', 5 , 'nice vegies4', 'tasted it !', 'Y');
+INSERT INTO `comments` VALUES (10, 2, '2013-04-19 20:53:04', 5 , 'nice ', 'some dirt', 'Y');
+INSERT INTO `comments` VALUES (11, 2, '2013-04-20 20:53:04', 5 , 'cool', 'had one rotten!', 'Y');
 UNLOCK TABLES;
+
+LOCK TABLES `post_comments` WRITE;
+INSERT INTO `post_comments` VALUES (1 , 1 , 1);
+INSERT INTO `post_comments` VALUES (2 , 1 , 2);
+INSERT INTO `post_comments` VALUES (3 , 2 , 3);
+INSERT INTO `post_comments` VALUES (4 , 2 , 4);
+INSERT INTO `post_comments` VALUES (5 , 2 , 5);
+INSERT INTO `post_comments` VALUES (6 , 3 , 6);
+INSERT INTO `post_comments` VALUES (7 , 3 , 7);
+INSERT INTO `post_comments` VALUES (8 , 3 , 8);
+INSERT INTO `post_comments` VALUES (9 , 3 , 9);
+INSERT INTO `post_comments` VALUES (10 , 4 , 10);
+INSERT INTO `post_comments` VALUES (11 , 5 , 11);
+UNLOCK TABLES;
+
 
 --
 -- ratings

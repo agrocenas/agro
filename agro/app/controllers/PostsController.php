@@ -1,10 +1,10 @@
 <?php
 
 use Phalcon\Tag,
-	Phalcon\Mvc\Model\Criteria,
-	Phalcon\Forms\Form,
-	Phalcon\Forms\Element\Text,
-	Phalcon\Forms\Element\Hidden;
+    Phalcon\Mvc\Model\Criteria,
+    Phalcon\Forms\Form,
+    Phalcon\Forms\Element\Text,
+    Phalcon\Forms\Element\Hidden;
 
 class PostsController extends ControllerBase
 {
@@ -25,16 +25,16 @@ class PostsController extends ControllerBase
 				"size" => 10,
 				"maxlength" => 10,
 			)));
-                        $form->add(new Text("post_user", array(
+                        $form->add(new Text("user", array(
                             "size" => 20,
                             "maxlength" => 50
                     )));
 		} else {
 			$form->add(new Hidden("id"));
-                        $form->add(new Hidden("post_user"));
+                        $form->add(new Hidden("user"));
 		}
                 
-		$form->add(new Phalcon\Forms\Element\Date("post_date"));
+		$form->add(new Phalcon\Forms\Element\Date("date"));
 
 		$form->add(new Text("product", array(
 			"size" => 10,
@@ -84,7 +84,7 @@ class PostsController extends ControllerBase
 			$this->flash->warning("A pesquisa nao encontrou resultados");
 			return $this->forward("posts/index");
 		}
-
+                
 		$paginator = new Phalcon\Paginator\Adapter\Model(array(
 			"data" => $posts,
 			"limit" => 10,
@@ -94,7 +94,6 @@ class PostsController extends ControllerBase
 		$page = $paginator->getPaginate();
 
 		$this->view->setVar("page", $page);
-		$this->view->setVar("posts", $posts);
 	}
 
 	public function newAction()
@@ -127,8 +126,8 @@ class PostsController extends ControllerBase
 
 		$posts = new Posts();
 		$posts->id = $this->request->getPost("id", "int");
-		$posts->post_user = $this->request->getPost("post_user", "striptags");
-		$posts->post_date = $this->request->getPost("post_date", "striptags");
+		$posts->user = $this->request->getPost("user", "striptags");
+		$posts->date = $this->request->getPost("date", "striptags");
 		$posts->product = $this->request->getPost("product", "int");
 		$posts->description = $this->request->getPost("description", "striptags");
                 $posts->acive = "Y";
@@ -159,8 +158,8 @@ class PostsController extends ControllerBase
 		}
 
 		$posts->id = $this->request->getPost("id", "int");
-		$posts->post_user = $this->request->getPost("post_user", "striptags");
-		$posts->post_date = $this->request->getPost("post_date", "striptags");
+		$posts->user = $this->request->getPost("user", "striptags");
+		$posts->date = $this->request->getPost("date", "striptags");
 		$posts->product = $this->request->getPost("product", "striptags");
 		$posts->description = $this->request->getPost("description", "striptags");
                 $posts->acive = $this->request->getPost("active", "striptags");

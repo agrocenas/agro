@@ -48,25 +48,29 @@
             <span></span>
         </div>
         <div style="width: 10%">
-            {{ post.post_date }}
+            {{ post.date }}
         </div>
     </div>
-    <!--product comments -->
-    <div class="post-comment">
-        <div style="width: 10%" >                    
-            {{ image("/../public/img/default-user.png") }}
+    <!--post comments -->
+    {% for comment in post.getPostComments() %}
+        <div class="post-comment">
+            <div style="width: 10%" >                    
+                {{ image("/../public/img/default-user.png") }}
+            </div>
+            <div style="width: 20%">
+               id: {{ comment.id }} 
+               post: {{ comment.post }}
+               comment: {{ comment.comment }}
+<!--                {{ comment.description }}-->
+            </div>
+            <div style="width: 30%">
+                <span/>
+            </div>
+            <div style="width: 10%">
+                <!--{{ commnent.date }}-->
+            </div>   
         </div>
-        <div style="width: 20%">
-            {{ post.getComments().title }}<br>
-            {{ post.getComments().description }}
-        </div>
-        <div style="width: 30%">
-            <span/>
-        </div>
-        <div style="width: 10%">
-            {{ post.getComments().date }}
-        </div>   
-    </div>
+    {% endfor %}
     <br/>
     <hr>
 </div>

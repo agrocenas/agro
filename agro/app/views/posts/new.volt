@@ -17,13 +17,13 @@
     <h2>Postar</h2>
 
      <div class="clearfix">
-        <label for="post_user">Por</label>
-        <?php echo Tag::textField(array("post_user", "size" => 24, "maxlength" => 70)) ?>
+        <label for="user">Por</label>
+        <?php echo Tag::textField(array("user", "size" => 24, "maxlength" => 70)) ?>
     </div>
    
      <div class="clearfix">
-        <label for="post_date">Em</label>
-        <?php echo Tag::dateField(array("post_date", DateTime::RFC3339 )) ?>
+        <label for="date">Em</label>
+        <?php echo Tag::dateField(array("date", DateTime::RFC3339 )) ?>
     </div>
     
     <div class="clearfix">

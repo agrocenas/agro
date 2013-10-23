@@ -1,0 +1,32 @@
+TODOS:
+
+Modelo de dados:
+-Definir as entidades, e campos 
+-Normalizaçao
+-relações entre tabelas
+
+
+Front-End:
+-Definir cores e layout
+-Logo
+
+
+Back-end
+-Melhorar routiing (criar um ficheriro so para routing ? )
+ -models
+
+
+Scripts:
+-deploy no electricidadeempo.net
+
+
+Funcionalidades:
+-Serviço da google para obter coordenadas GPS a partir de morada
+-
+
+Geral:
+
+-Categorizar os pedidos (rating, interesse, duvidas, contactos)
+-alterar os pedidos para ?
+	-gestao de posts colocados pelo user
+	-

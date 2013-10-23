@@ -89,8 +89,8 @@ CREATE TABLE `users` (
 DROP TABLE IF EXISTS `posts`;
 CREATE  TABLE IF NOT EXISTS `posts` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
-  `post_user` INT NOT NULL REFERENCES users(`id`),
-  `post_date` DATETIME NOT NULL ,
+  `user` INT NOT NULL REFERENCES users(`id`),
+  `date` DATETIME NOT NULL ,
   `product` INT NOT NULL REFERENCES product(`id`),
   `description` VARCHAR(4000) CHARACTER SET 'utf8' COLLATE 'utf8_spanish_ci' NOT NULL ,
   `active` CHAR(1) CHARACTER SET 'utf8' COLLATE 'utf8_spanish_ci' NOT NULL ,
@@ -106,9 +106,8 @@ ENGINE = InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 DROP TABLE IF EXISTS `comments`;
 CREATE  TABLE IF NOT EXISTS `comments` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
-  `post` INT NOT NULL REFERENCES posts(`id`),
   `user` INT NOT NULL REFERENCES users(`id`),  
-  `date` DATETIME NOT NULL ,
+  `date` DATETIME NOT NULL , -- use date from post_comment instead
   `rating` INT UNSIGNED REFERENCES ratings(`id`), 
   `title` VARCHAR(50) CHARACTER SET 'utf8' COLLATE 'utf8_spanish_ci' ,
   `descrition` VARCHAR(500) CHARACTER SET 'utf8' COLLATE 'utf8_spanish_ci' NOT NULL ,
@@ -118,6 +117,18 @@ CREATE  TABLE IF NOT EXISTS `comments` (
 ENGINE = InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 
+--
+-- Relational table for post comments
+--
+
+DROP TABLE IF EXISTS `post_comments`;
+CREATE TABLE `post_comments` (
+    `id` INT unsigned NOT NULL AUTO_INCREMENT,
+    `post` INT NOT NULL REFERENCES posts(`id`),
+    `comment` INT NOT NULL REFERENCES comments(`id`),
+    -- `created_at` DATE NOT NULL,
+    PRIMARY KEY (`id`)
+);
 
 --
 -- Table structure for table `ratings``

@@ -52,7 +52,7 @@
             $newnode->setAttribute("type", $row['type']);
         }
 
-        $xmlfile = $doc->save("mapLocations.xml");
+        //$xmlfile = $doc->save("mapLocations.xml");
         
         //echo $xmlfile;
         echo $doc->saveXML ();

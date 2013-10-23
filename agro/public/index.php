@@ -2,6 +2,13 @@
 
 error_reporting(E_ALL);
 
+//add debug capabilities 
+//- must be deactivated on deploy to production
+//- xdebug as alternative
+
+//$debug = new \Phalcon\Debug();
+//$debug->listen();
+
 try {
 
 	/**

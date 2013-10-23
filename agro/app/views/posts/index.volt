@@ -19,12 +19,12 @@
         <?php echo Tag::textField(array("id", "size" => 10, "maxlength" => 10, "type" => "number")) ?>
     </div>
     <div class="control-group">
-        <label for="post_user">Publicado por</label>
-        <?php echo Tag::textField(array("post_user", "size" => 20, "maxlength" => 50, "type" => "string")) ?>
+        <label for="user">Publicado por</label>
+        <?php echo Tag::textField(array("user", "size" => 20, "maxlength" => 50, "type" => "string")) ?>
     </div>
     <div class="control-group">
-        <label for="post_date">Publicado em</label>
-        <?php echo Tag::dateField(array("post_date", "size" => 10, "maxlength" => 10, "type" => "dateTime")) ?>
+        <label for="date">Publicado em</label>
+        <?php echo Tag::dateField(array("date", "size" => 10, "maxlength" => 10, "type" => "dateTime")) ?>
     </div>
     <div class="control-group">
         <label for="product">Produto</label>

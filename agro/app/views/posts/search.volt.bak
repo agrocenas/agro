@@ -54,7 +54,7 @@
                     <span/>
                 </td>
                 <td style="width: 10%">
-                    {{ post.post_date }}
+                    {{ post.date }}
                 </td>   
                     </td>
             </tr>

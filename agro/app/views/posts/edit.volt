@@ -25,10 +25,10 @@
 
 <div class="clearfix">
     <div>
-        <label for="post_user">Por</label>
+        <label for="user">Por</label>
     </div>
     <div>
-{{ form.render("post_user") }}
+{{ form.render("user") }}
     </div>
 </div>
     
@@ -36,7 +36,7 @@
 
 <div class="clearfix">
         <label for="description">Em</label>
-        {{ form.render("post_date") }}
+        {{ form.render("date") }}
     </div>
     
 

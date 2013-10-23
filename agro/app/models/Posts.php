@@ -13,13 +13,13 @@ class Posts extends Phalcon\Mvc\Model {
      * Relation to user who has posted
      * @var integer
      */
-    public $post_user;
+    public $user;
     
     /**
      * Post date
      * @var datetime
      */
-    public $post_date;
+    public $date;
     
     /**
      * Relation to product posted
@@ -35,9 +35,10 @@ class Posts extends Phalcon\Mvc\Model {
     
     /**
      *Relation to comments
-     * @var type string
+     * @var type integer
      */
-    public $comment;
+    //public $comment;
+    
     /**
      * Symbol Y or N - indicates if post is active
      * @var string
@@ -50,7 +51,7 @@ class Posts extends Phalcon\Mvc\Model {
      */
     
     public function initialize() {
-        $this->hasOne('post_user', 'Users', 'id', array(
+        $this->hasOne('user', 'Users', 'id', array(
             'reusable' => false
         ));
 
@@ -58,9 +59,13 @@ class Posts extends Phalcon\Mvc\Model {
             'reusable' => false
         ));
         
-        $this->hasOne('comment', 'Comments', 'id', array(
-            'reusable' => false
-        ));
+        $this->hasMany('id', 'PostComments', 'post');
+    }
+    
+    //performed on every object
+    public function onConstruct()
+    {
+        //initialize comments here ??
     }
 
 }

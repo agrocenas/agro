@@ -15,6 +15,6 @@
 
 <div>
     
-    <div id="map" style="width: 100%; height: 600px;"  onplay="Map.loadMap()" ></div>   
+    <div id="map" onplay="Map.loadMap()" ></div>   
   
 </div>

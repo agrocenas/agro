@@ -60,17 +60,23 @@ class Comments extends Phalcon\Mvc\Model {
     
     public function initialize() {
 
-        $this->hasOne('post', 'Posts', 'id', array(
-            'reusable' => false
-        ));
+//         $this->hasMany('id', 'Posts', 'comment', array(
+//        	'foreignKey' => array(
+//        		'message' => 'Comentario nao pode ser apagado'
+//        	)
+//        ));
         
-        $this->hasOne('user', 'Users', 'id', array(
-            'reusable' => false
-        ));
-        
-        $this->hasOne('rating','Ratings', 'id', array(
-            'reusable' => false
-        ));
+//        $this->hasOne('post', 'Posts', 'id', array(
+//            'reusable' => false
+//        ));
+//        
+//        $this->hasOne('user', 'Users', 'id', array(
+//            'reusable' => false
+//        ));
+//        
+//        $this->hasOne('rating','Ratings', 'id', array(
+//            'reusable' => false
+//        ));
         
     }
 }

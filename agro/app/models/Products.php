@@ -33,7 +33,7 @@ class Products extends Phalcon\Mvc\Model
 		'reusable' => true
 	));
         
-        $this->hasMany('id', 'Posts', 'post_user', array(
+        $this->hasMany('id', 'Posts', 'user', array(
         	'foreignKey' => array(
         		'message' => 'Produto cannot be deleted'
         	)
