@@ -107,10 +107,12 @@ DROP TABLE IF EXISTS `comments`;
 CREATE  TABLE IF NOT EXISTS `comments` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
   `user` INT NOT NULL REFERENCES users(`id`),  
+  `post` INT NOT NULL REFERENCES posts(`id`),
+  `type` INT NOT NULL REFERENCES comment_type(`id`),
   `date` DATETIME NOT NULL , -- use date from post_comment instead
   `rating` INT UNSIGNED REFERENCES ratings(`id`), 
   `title` VARCHAR(50) CHARACTER SET 'utf8' COLLATE 'utf8_spanish_ci' ,
-  `descrition` VARCHAR(500) CHARACTER SET 'utf8' COLLATE 'utf8_spanish_ci' NOT NULL ,
+  `description` VARCHAR(500) CHARACTER SET 'utf8' COLLATE 'utf8_spanish_ci' NOT NULL ,
   `active` CHAR(1) CHARACTER SET 'utf8' COLLATE 'utf8_spanish_ci' NOT NULL ,
   PRIMARY KEY (`id`)
 )
@@ -118,17 +120,18 @@ ENGINE = InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 
 --
--- Relational table for post comments
---
+-- Table structure for table `comment_type'
+-- 
 
-DROP TABLE IF EXISTS `post_comments`;
-CREATE TABLE `post_comments` (
-    `id` INT unsigned NOT NULL AUTO_INCREMENT,
-    `post` INT NOT NULL REFERENCES posts(`id`),
-    `comment` INT NOT NULL REFERENCES comments(`id`),
-    -- `created_at` DATE NOT NULL,
-    PRIMARY KEY (`id`)
-);
+DROP TABLE IF EXISTS `comment_type`;
+CREATE TABLE `comment_type` (
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
+    `title` VARCHAR(50) CHARACTER SET 'utf8' COLLATE 'utf8_spanish_ci' ,
+    `descrition` VARCHAR(500) CHARACTER SET 'utf8' COLLATE 'utf8_spanish_ci' NOT NULL ,
+   PRIMARY KEY (`id`)
+)
+ENGINE = InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
 
 --
 -- Table structure for table `ratings``
@@ -140,7 +143,7 @@ CREATE TABLE `ratings` (
   `title` VARCHAR(25) COLLATE utf8_spanish_ci NOT NULL,
   `descrition` VARCHAR(50) COLLATE utf8_spanish_ci,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 
 
@@ -172,3 +175,4 @@ CREATE TABLE `pictures` (
 PRIMARY KEY (`id`)
 ) ENGINE = InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+COMMIT;

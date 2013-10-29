@@ -1,0 +1,14 @@
+Development guidelines:
+
+tables
+	-names are plural eg. Post.php -> posts
+	-When relation tables use _ to separate names and add method get_source returning table name to controller 
+		eg. Controller: PostComments.php
+			Table: posts_coments
+			get_source: public function getSource() {  return "post_comments";     }
+	-
+	
+	
+Casing:
+	-whenever possible use camel case eg. agroCenas
+	

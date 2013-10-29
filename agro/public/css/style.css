@@ -165,9 +165,25 @@ div.post-comment {
     display: -webkit-box;
 }
 
+div.text-rigth {
+    text-align: right;
+}
+
+div.text-left {
+    text-align: left;
+}
+
+div.available {
+    alignment-baseline: central;
+    alignment-adjust: central;
+    vertical-align: central;
+    
+}
+
 /* Map area */
 #map {
-    width: 100%;
+    
+    width: 80%;
     height: 600px;
     overflow: visible;
 }

@@ -59,7 +59,7 @@
             </div>
             <div class="text-left" style="width: 20%">
                 #{{ comment.id }} <br>
-                {{ comment.type }}
+                {{ comment.type.title }}
             </div>
             <div class="text-left" style="width: 60%">
                 <!--<span/>-->
@@ -71,12 +71,12 @@
             </div>   
         </div>
     {% endfor %}
+    <hr>
 </div>
-<hr>
 {% if loop.last %}
-{{ link_to("posts/search?page=" ~ page.previous, '<i class="icon-step-backward"></i>', "class": "btn") }}
+<!-- {{ link_to("posts/search?page=" ~ page.previous, '<i class="icon-step-backward"></i>', "class": "btn") }}
 {{ link_to("posts/search?page=" ~ page.next, '<i class="icon-step-forward"></i>', "class": "btn") }}
-
+-->
 {% endif %}
 
 {% else %}

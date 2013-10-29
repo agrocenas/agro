@@ -22,6 +22,13 @@ class Comments extends Phalcon\Mvc\Model {
     public $user;
     
     /**
+     * Relation to type of Comment
+     * @var integer
+     */
+    public $type;
+    
+    
+    /**
      * Post date
      * @var datetime
      */
@@ -59,24 +66,22 @@ class Comments extends Phalcon\Mvc\Model {
      */
     
     public function initialize() {
-
-//         $this->hasMany('id', 'Posts', 'comment', array(
-//        	'foreignKey' => array(
-//        		'message' => 'Comentario nao pode ser apagado'
-//        	)
-//        ));
         
-//        $this->hasOne('post', 'Posts', 'id', array(
-//            'reusable' => false
-//        ));
+        $this->hasOne('post', 'Posts', 'id', array(
+            'reusable' => false
+        ));
+        
+        $this->hasOne('user', 'Users', 'id', array(
+            'reusable' => false
+        ));
 //        
-//        $this->hasOne('user', 'Users', 'id', array(
-//            'reusable' => false
-//        ));
-//        
-//        $this->hasOne('rating','Ratings', 'id', array(
-//            'reusable' => false
-//        ));
+        $this->hasOne('rating','Ratings', 'id', array(
+            'reusable' => false
+        ));
+        
+        $this->hasOne('type','CommentType', 'id', array(
+            'reusable' => false
+        ));
         
     }
 }

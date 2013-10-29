@@ -10,7 +10,7 @@ class Ratings extends Phalcon\Mvc\Model {
     public $id;
     
     /**
-     * Relation to user who has posted
+     * Rating short Description
      * @var string
      */
     public $title;

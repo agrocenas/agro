@@ -35,7 +35,7 @@ class Products extends Phalcon\Mvc\Model
         
         $this->hasMany('id', 'Posts', 'user', array(
         	'foreignKey' => array(
-        		'message' => 'Produto cannot be deleted'
+        		'message' => 'Produtos nao podem ser apagados'
         	)
         ));
     }

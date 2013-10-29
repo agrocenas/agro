@@ -113,4 +113,13 @@ class SessionController extends ControllerBase
         $this->flash->success('Até já !');
         return $this->forward('index/index');
     }
+    
+    /**
+     * Redirects user to terms page
+     */
+    public function termsAction()
+    {
+        
+    }
+    
 }
