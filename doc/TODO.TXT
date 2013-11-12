@@ -14,19 +14,28 @@ Front-End:
 Back-end
 -Melhorar routiing (criar um ficheriro so para routing ? )
  -models
-
+-MapLocations Controller : Criar metodos para devolver JSON:
+	-Por Id;
+	-Todas as coordenadas; 
 
 Scripts:
 -deploy no electricidadeempo.net
+-JavaScript/Jquery para fazer request ao servidor e receber em JSON as coordenadas.
+-separar JScripts  por tipo:
+	-mapas
+	-Chamadas a a serviços (ainda não existem)
+	-Visual/layout;
+
 
 
 Funcionalidades:
 -Serviço da google para obter coordenadas GPS a partir de morada
 -
 
-Geral:
 
+Geral:
 -Categorizar os pedidos (rating, interesse, duvidas, contactos)
 -alterar os pedidos para ?
 	-gestao de posts colocados pelo user
-	-
+	-like (postar para o facebook)
+	

@@ -118,15 +118,22 @@ class Elements extends Phalcon\Mvc\User\Component
     {
         $controllerName = $this->view->getControllerName();
         $actionName = $this->view->getActionName();
-        echo '<ul class="nav nav-tabs">';
+        echo '<div class="navbar-private">';
+        echo '<nav>';
+        echo '<ul>';
         foreach ($this->_tabs as $caption => $option) {
             if ($option['controller'] == $controllerName && ($option['action'] == $actionName || $option['any'])) {
-                echo '<li class="active">';
+                echo '<li id="active">';
             } else {
                 echo '<li>';
             }
-            echo Phalcon\Tag::linkTo($option['controller'].'/'.$option['action'], $caption), '<li>';
+            echo Phalcon\Tag::linkTo($option['controller'].'/'.$option['action'], $caption);
+            echo '</li>';
+           
         }
-        echo '</ul>';
+       echo '</ul>';
+       echo '</nav>';
+       echo '</div>';
+       echo '<br>';
     }
 }

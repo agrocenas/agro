@@ -1,0 +1,11 @@
+[RoadMap]
+
+-página de perfil publico para users onde será possivel consultar dados do user:
+	-Posts do user
+		-Activos e Historico
+	-Localização do user no mapa
+
+-Permitir mensagens para users.
+-Envio de convites para a plataforma.
+
+

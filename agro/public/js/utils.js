@@ -133,3 +133,11 @@ $(document).ready(function() {
     $("#registerForm .alert").hide();
     $("div.profile .alert").hide();
 });
+
+//var getMapLocations = 
+//    $.ajax({
+//        url:"/mapLocations/getCoordinates",
+//        type: 'GET'
+//        
+//    })
+    

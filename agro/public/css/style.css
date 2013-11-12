@@ -6,7 +6,7 @@ body {
     font-weight: normal;
     line-height: 20px;
     padding-bottom: 40px;
-    padding-top: 60px;
+    padding-top: 40px;  /*  from 60 to 40-> changed for private menu to have no space for main menu */ 
 }
 
 .topbar .header {
@@ -28,7 +28,7 @@ input.span6, textarea.span6 {
 }
 
 .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
-	width: 80%;
+    width: 80%;
 }
 
 .span4 {
@@ -95,7 +95,7 @@ input, textarea, select, .uneditable-input {
 }
 
 .block .block_head h2 {
-	padding: 5px;
+    padding: 5px;
 }
 
 .block .block_content {
@@ -109,20 +109,20 @@ input, textarea, select, .uneditable-input {
 }
 
 div.center {
-	text-align: center;
+    text-align: center;
 }
 
 div.left {
-	text-align: left;
+    text-align: left;
 }
 
 div.right {
-	text-align: right;
+    text-align: right;
 }
 
 div.login-or-signup {
-	padding-left: 50px;
-	padding-top: 20px;
+    padding-left: 50px;
+    padding-top: 20px;
 }
 
 .row {
@@ -130,46 +130,49 @@ div.login-or-signup {
 }
 
 select {
-	padding: 5px;
-	height: auto;
+    padding: 5px;
+    height: auto;
 }
 
 div.scaffold h2 {
-	margin: 10px;
+    margin: 10px;
 }
 
 /* Posts area */
 
 div.post {
-    overflow: auto;
+    overflow: visible;
 }
 
 
 div.post-user {
     width: 100%;
     background-color: #EEEEEE;
-    display:-webkit-box;
+    float: left;
+    /*display:-webkit-box;*/
 }
 
 div.post-product {
     float: right;
     width: 85%;
     background-color: #F5F5F5;
-    display: -webkit-box;
+    /*display: -webkit-box;*/
 }
 
 div.post-comment {
     float: right;
     width: 70%;
     background-color: #F8F8F8;
-    display: -webkit-box;
+    /*display: -webkit-box;*/
 }
 
-div.text-rigth {
+div.divline-rigth {
+    float: right;
     text-align: right;
 }
 
-div.text-left {
+div.divline-left {
+    float: left;
     text-align: left;
 }
 
@@ -177,16 +180,167 @@ div.available {
     alignment-baseline: central;
     alignment-adjust: central;
     vertical-align: central;
-    
+
 }
+
+.text-size-small {
+    font-size: x-small;
+}
+
+/*private menu*/
+
+/*.navbar-private-li:hover {
+    color: green;
+    text-decoration: none;
+    background-color: blue;
+}*/
+
+/*.navbar-private {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    background-color: #565656;
+    color: #565656;
+    list-style-type:none;
+    margin-bottom: 18px;
+}*/
+
+.navbar-private {
+    background: url('../img/navbar-private.png');
+    /*width: 100%;*/
+    width: auto;
+/*    min-height: 10px; */
+    position: static;
+    height: 25px;
+    margin-top: 0;
+    -webkit-box-shadow: 0px 1px 1px 0px rgba(250, 250, 250, .5);
+    -moz-box-shadow: 0px 1px 1px 0px rgba(250, 250, 250, .5);
+    box-shadow: 0px 1px 1px 0px rgba(250, 250, 250, .5);
+}
+
+
+.navbar-private nav{
+    /*width: 100%;*/
+    width: auto;
+    height: 23px;
+/*    background: -moz-linear-gradient(top,  #353535 0%, #222222 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#353535), color-stop(100%,#222222));
+    background: -webkit-linear-gradient(top,  #353535 0%,#222222 100%);
+    background: -o-linear-gradient(top,  #353535 0%,#222222 100%);
+    background: -ms-linear-gradient(top,  #353535 0%,#222222 100%);
+    background: linear-gradient(top,  #353535 0%,#222222 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#353535', endColorstr='#222222',GradientType=0 );*/
+    border-width: 1px 0 1px 0;
+    border-style: solid;
+    border-color: #000;
+}
+.navbar-private nav:before {
+    border-top: 1px solid #444;
+}
+.nav-private nav:after {
+    border-top: 1px solid #333;
+}
+
+.navbar-private nav ul {
+    /*width: 710px;*/
+    width: auto;
+    height: 23px;
+    margin: 0 auto;
+    border-left: 1px solid #111;
+    border-right: 1px solid #444;
+}
+
+.navbar-private nav li {
+    text-align: center;
+    display:inline;
+    float: left;
+    width: 14.25%;
+}
+
+.navbar-private nav li a {
+    display: inline-block;
+    width: 100%;
+    height: 23px;
+/*    font: bold 13px 'Arial', sans-serif ;*/
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #999999;
+    text-decoration: none;
+    text-align: center;
+    line-height: 25px;
+    text-shadow: 1px 1px 0px #111;
+    filter: dropshadow(color=#111, offx=1, offy=1);
+    border-left: 1px solid #444;
+    border-right: 1px solid #111;
+}
+
+/*.navbar-private nav li a:hover {
+    background: -moz-linear-gradient(top,  #444 0%, #222 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#444), color-stop(100%,#222));
+    background: -webkit-linear-gradient(top,  #444 0%,#222 100%);
+    background: -o-linear-gradient(top,  #444 0%,#222 100%);
+    background: -ms-linear-gradient(top,  #444 0%,#222 100%);
+    background: linear-gradient(top,  #444 0%,#222 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#444', endColorstr='#222',GradientType=0 );
+}*/
+
+.navbar-private nav li a:active {
+    //background: #222222;
+    font-size: 13px ;
+    color: #ffffff;
+}
+
+/*.navbar-private nav li a:active {
+    background: #222;
+    -webkit-box-shadow: inset 0px 0px 3px 1px rgba(0, 0, 0, .3);
+    -moz-box-shadow: inset 0px 0px 3px 1px rgba(0, 0, 0, .3);
+    box-shadow: inset 0px 0px 3px 1px rgba(0, 0, 0, .3);
+}*/
+/*
+.navbar-private nav li a:active:after {
+    content:"";
+    display: block;
+    width: 100%;
+    width: auto;
+    height: 3px;
+    bottom: 3px;
+    background: greenyellow;
+  Red gradient
+    background: -moz-linear-gradient(top,  #ff5e1f 0%, #ff3410 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff5e1f), color-stop(100%,#ff3410));
+    background: -webkit-linear-gradient(top,  #ff5e1f 0%,#ff3410 100%);
+    background: -o-linear-gradient(top,  #ff5e1f 0%,#ff3410 100%);
+    background: -ms-linear-gradient(top,  #ff5e1f 0%,#ff3410 100%);
+    background: linear-gradient(top,  #ff5e1f 0%,#ff3410 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff5e1f', endColorstr='#ff3410',GradientType=0 );
+    
+}*/
+
+.navbar-private nav li#active:before {
+    content:"";
+    display: block;
+    width: 100%;
+    width: auto;
+    height: 2px;
+    bottom: 2px;
+    background: greenyellow;
+} 
+
 
 /* Map area */
 #map {
-    
     width: 80%;
     height: 600px;
     overflow: visible;
 }
+
+
+/* bootstrap OVERRIDES*/ 
+
+/*@media (max-width: 979px) {
+  .navbar-fixed-top {
+    position:fixed;
+  }
+}*/
 
 
 /*  NOTES
